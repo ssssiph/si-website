@@ -3,7 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentPage = window.location.pathname.split("/").pop();
 
     links.forEach(link => {
-        if (currentPage === link.getAttribute("href")) {
+        link.classList.remove("active");
+
+        if ((currentPage === "index.html" && link.getAttribute("href") === "index.html") ||
+            (currentPage === "projects.html" && link.getAttribute("href") === "projects.html")) {
             link.classList.add("active");
         }
     });
