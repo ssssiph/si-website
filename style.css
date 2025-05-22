@@ -73,3 +73,33 @@ body {
 .nav-links a.active::after {
     width: 100%;
 }
+
+.projects-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+}
+
+.project img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.year {
+    background-color: orange;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.empty {
+    opacity: 0.5;
+}
