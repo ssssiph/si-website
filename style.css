@@ -65,9 +65,9 @@ body {
     width: 100%;
 }
 
-/* Активная кнопка */
+/* Только активная кнопка должна быть черной */
 .nav-links a.active {
-    color: black !important;
+    color: black;
 }
 
 .nav-links a.active::after {
