@@ -12,20 +12,21 @@ body {
 
 .navbar {
     position: fixed;
-    top: 10px; /* Опустил немного */
+    top: 10px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 15px 0; /* Увеличил отступ */
+    padding: 15px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid lightgray; /* Тонкая серая полоска */
 }
 
 .logo {
     position: absolute;
     left: 20px;
-    height: 60px; /* Немного увеличил */
+    height: 60px;
 }
 
 .nav-links {
@@ -36,7 +37,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: gray; /* Серый цвет для невыбранных */
+    color: black; /* Черный цвет текста */
     font-size: 20px;
     font-weight: 600;
     padding: 10px;
@@ -47,17 +48,21 @@ body {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -4px; /* Полоска под кнопкой */
+    bottom: -4px;
     width: 0;
     height: 3px;
     background-color: orange;
     transition: width 0.3s ease-in-out;
 }
 
-.nav-links a:hover {
-    color: black; /* Черный текст при наведении */
+.nav-links a:hover::after {
+    width: 100%;
 }
 
-.nav-links a:hover::after {
-    width: 100%; /* Анимация появления полоски слева направо */
+.nav-links a.active {
+    color: black;
+}
+
+.nav-links a.active::after {
+    width: 100%;
 }
