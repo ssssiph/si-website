@@ -8,11 +8,12 @@
 
 body {
     font-family: 'Jura', sans-serif;
+    padding-top: 80px; /* Опускаем контент ниже меню */
 }
 
 .navbar {
     position: fixed;
-    top: 10px;
+    top: 0;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -20,7 +21,7 @@ body {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-bottom: 2px solid lightgray; /* Сделал полоску толще и ниже */
+    border-bottom: 2px solid lightgray;
 }
 
 .logo {
@@ -37,7 +38,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: gray; /* Исправил на серый */
+    color: gray; /* Серый цвет для невыбранных кнопок */
     font-size: 20px;
     font-weight: 600;
     padding: 10px;
@@ -55,6 +56,7 @@ body {
     transition: width 0.3s ease-in-out;
 }
 
+/* При наведении меняем цвет текста и добавляем полоску */
 .nav-links a:hover {
     color: black;
 }
@@ -63,7 +65,7 @@ body {
     width: 100%;
 }
 
-/* Активная кнопка */
+/* Активная кнопка (на текущей странице) */
 .nav-links a.active {
     color: black;
 }
