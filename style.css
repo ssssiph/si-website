@@ -18,9 +18,9 @@ body {
     justify-content: center;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 15px 0;
+    padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid lightgray; /* Тонкая серая полоска */
+    border-bottom: 1px solid lightgray;
 }
 
 .logo {
@@ -37,7 +37,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: black; /* Черный цвет текста */
+    color: gray; /* Серый цвет для невыбранных */
     font-size: 20px;
     font-weight: 600;
     padding: 10px;
@@ -55,10 +55,15 @@ body {
     transition: width 0.3s ease-in-out;
 }
 
+.nav-links a:hover {
+    color: black;
+}
+
 .nav-links a:hover::after {
     width: 100%;
 }
 
+/* Активная кнопка */
 .nav-links a.active {
     color: black;
 }
