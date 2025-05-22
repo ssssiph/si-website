@@ -1,25 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-  // Обновляем активное состояние навигационного меню
-  const navLinks = document.querySelectorAll('.nav-links a');
-  if (window.location.hash === "#projects") {
-    navLinks.forEach(link => {
-      if (link.getAttribute("href") === "#projects") {
-        link.classList.add("active");
-      } else {
-        link.classList.remove("active");
-      }
-    });
-  } else {
-    navLinks.forEach(link => {
-      // Учитываем, что главная страница может иметь href "index.html" или ""
-      if (link.getAttribute("href") === "index.html" || link.getAttribute("href") === "") {
-        link.classList.add("active");
-      } else {
-        link.classList.remove("active");
-      }
-    });
+  // Обновляем активное состояние навигации
+  function updateNavActive() {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    if (window.location.hash === "#projects") {
+      navLinks.forEach(link => {
+        if (link.getAttribute("href") === "#projects") {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
+        }
+      });
+    } else {
+      navLinks.forEach(link => {
+        if (link.getAttribute("href") === "index.html" || link.getAttribute("href") === "") {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
+        }
+      });
+    }
   }
+  
+  updateNavActive();
+  window.addEventListener("hashchange", updateNavActive);
 
   // Слайдер проектов
   const projects = document.querySelectorAll(".project");
@@ -28,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const leftArrow = document.querySelector("#left-arrow");
   const rightArrow = document.querySelector("#right-arrow");
   
-  // Изначально активен средний фрейм (индекс 1)
   let currentIndex = 1;
   
   function updateSlider() {
@@ -41,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
     
-    // Центрируем активный фрейм внутри обёртки
     const activeProject = document.querySelector(".project.active");
     if (activeProject) {
       const wrapperCenter = wrapper.offsetWidth / 2;
