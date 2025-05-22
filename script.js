@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentIndex = 1;
 
   function updateSlider() {
-    // Зацикливаем все фреймы: обновляем классы и прозрачность
     projects.forEach((project, index) => {
       project.classList.remove("active");
       project.style.opacity = "0.5";
@@ -26,19 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const activeCenter = activeProject.offsetLeft + activeProject.offsetWidth / 2;
       const shift = wrapperCenter - activeCenter;
       container.style.transform = "translateX(" + shift + "px)";
-      
-      // Позиционируем стрелки относительно активного фрейма
-      const activeRect = activeProject.getBoundingClientRect();
-      const wrapperRect = wrapper.getBoundingClientRect();
-      leftArrow.style.left =
-        activeRect.left - wrapperRect.left - leftArrow.offsetWidth - 10 + "px";
-      rightArrow.style.left =
-        activeRect.right - wrapperRect.left + 10 + "px";
     }
   }
 
   leftArrow.addEventListener("click", () => {
-    // Если мы на первом фрейме, переходим к последнему (зацикливание)
+    // Зацикливание: если на первом фрейме, переходим к последнему
     if (currentIndex <= 0) {
       currentIndex = projects.length - 1;
     } else {
@@ -48,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   rightArrow.addEventListener("click", () => {
-    // Если мы на последнем фрейме, переходим к первому (зацикливание)
+    // Зацикливание: если на последнем фрейме, переходим к первому
     if (currentIndex >= projects.length - 1) {
       currentIndex = 0;
     } else {
@@ -58,6 +49,5 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   window.addEventListener("resize", updateSlider);
-
   updateSlider();
 });
