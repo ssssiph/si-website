@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Изначально активен средний фрейм (индекс 1)
   let currentIndex = 1;
-
+  
   function updateSlider() {
     projects.forEach((project, index) => {
       project.classList.remove("active");
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
     
-    // Центрируем активный фрейм в пределах обёртки
+    // Центрируем активный фрейм внутри обёртки
     const activeProject = document.querySelector(".project.active");
     if (activeProject) {
       const wrapperCenter = wrapper.offsetWidth / 2;
@@ -27,25 +27,17 @@ document.addEventListener("DOMContentLoaded", () => {
       container.style.transform = "translateX(" + shift + "px)";
     }
   }
-
+  
   leftArrow.addEventListener("click", () => {
-    if (currentIndex <= 0) {
-      currentIndex = projects.length - 1;
-    } else {
-      currentIndex--;
-    }
+    currentIndex = (currentIndex <= 0) ? projects.length - 1 : currentIndex - 1;
     updateSlider();
   });
-
+  
   rightArrow.addEventListener("click", () => {
-    if (currentIndex >= projects.length - 1) {
-      currentIndex = 0;
-    } else {
-      currentIndex++;
-    }
+    currentIndex = (currentIndex >= projects.length - 1) ? 0 : currentIndex + 1;
     updateSlider();
   });
-
+  
   window.addEventListener("resize", updateSlider);
   updateSlider();
 });
