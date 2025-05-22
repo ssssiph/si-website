@@ -20,7 +20,7 @@ body {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid lightgray;
+    border-bottom: 2px solid lightgray; /* Сделал полоску толще и ниже */
 }
 
 .logo {
@@ -37,7 +37,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: gray; /* Серый цвет для невыбранных */
+    color: gray; /* Исправил на серый */
     font-size: 20px;
     font-weight: 600;
     padding: 10px;
