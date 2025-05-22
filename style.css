@@ -77,46 +77,71 @@ body {
 .projects-container {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
     justify-content: center;
+    padding: 20px;
 }
 
 .project {
     background: rgba(255, 255, 255, 0.9);
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 15px;
     text-align: center;
-    width: 250px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    box-shadow: 0 0 15px rgba(54, 70, 76, 0.15);
+    transition: transform 0.3s ease-in-out;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.image-wrapper {
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .image-wrapper img {
     width: 100%;
-    border-radius: 10px;
+    height: auto;
+    border-radius: 15px;
+}
+
+.project header {
+    margin-top: 10px;
+}
+
+.project h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
 }
 
 .year {
+    display: inline-block;
     background-color: orange;
     color: white;
-    padding: 5px;
-    border-radius: 5px;
     font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 5px;
 }
 
 .play-btn {
+    display: block;
+    width: 100%;
     background-color: #d8b4fe; /* Пастельный фиолетовый */
     color: white;
     border: none;
-    padding: 10px;
+    padding: 12px;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: bold;
     cursor: pointer;
     transition: background 0.3s ease-in-out;
+    margin-top: 15px;
 }
 
 .play-btn:hover {
     background-color: #c084fc;
-}
-
-.empty {
-    opacity: 0.5;
 }
