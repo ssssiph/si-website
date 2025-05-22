@@ -38,14 +38,13 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: gray; /* Серый цвет по умолчанию */
+    color: gray; /* Серый цвет для невыбранных кнопок */
     font-size: 20px;
     font-weight: 600;
     padding: 10px;
     position: relative;
 }
 
-/* Полоска под активной кнопкой */
 .nav-links a::after {
     content: "";
     position: absolute;
@@ -68,7 +67,7 @@ body {
 
 /* Активная кнопка */
 .nav-links a.active {
-    color: black;
+    color: black !important;
 }
 
 .nav-links a.active::after {
