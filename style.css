@@ -12,19 +12,23 @@ body {
 .navbar {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  height: 70px; /* увеличенная высота под размер логотипа */
+  height: 70px; /* увеличенная высота */
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 0 20px;
   z-index: 1000;
   display: flex;
   align-items: center;
+  /* Центрирование навигации, а сам логотип позиционируется абсолютно */
   justify-content: center;
+  position: relative;
 }
 .si_logo {
   position: absolute;
   left: 20px;
+  top: 10px; /* логотип центрируется внутри 70px */
   height: 50px;
   width: auto;
 }
@@ -47,7 +51,7 @@ body {
   padding: 5px 0;
 }
 .nav-links a.active {
-  color: black; /* активный – черный */
+  color: black; /* активный становится черным */
 }
 .nav-links a::after {
   content: "";
@@ -107,7 +111,7 @@ body {
   padding: 15px;
   border-radius: 15px;
   text-align: center;
-  flex: 0 0 calc((100% - 40px) / 3);  /* ровно 3 фрейма на экране */
+  flex: 0 0 calc((100% - 40px) / 3);  /* ровно 3 фрейма */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
