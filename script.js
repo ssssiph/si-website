@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   leftArrow.addEventListener("click", () => {
-    // Зацикливание: если на первом фрейме, переходим к последнему
     if (currentIndex <= 0) {
       currentIndex = projects.length - 1;
     } else {
@@ -39,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   rightArrow.addEventListener("click", () => {
-    // Зацикливание: если на последнем фрейме, переходим к первому
     if (currentIndex >= projects.length - 1) {
       currentIndex = 0;
     } else {
