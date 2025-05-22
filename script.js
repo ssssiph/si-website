@@ -1,4 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  // Обновляем активное состояние навигационного меню
+  const navLinks = document.querySelectorAll('.nav-links a');
+  if (window.location.hash === "#projects") {
+    navLinks.forEach(link => {
+      if (link.getAttribute("href") === "#projects") {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  } else {
+    navLinks.forEach(link => {
+      // Учитываем, что главная страница может иметь href "index.html" или ""
+      if (link.getAttribute("href") === "index.html" || link.getAttribute("href") === "") {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  }
+
+  // Слайдер проектов
   const projects = document.querySelectorAll(".project");
   const container = document.querySelector(".projects-container");
   const wrapper = document.querySelector(".projects-wrapper");
