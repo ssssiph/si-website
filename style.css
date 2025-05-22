@@ -7,13 +7,13 @@ body {
   padding: 0;
 }
 
-/* Верхняя панель */
+/* Верхнее меню */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255,255,255,0.9);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   padding: 10px 20px;
   z-index: 1000;
   display: flex;
@@ -21,13 +21,11 @@ body {
   justify-content: space-between;
 }
 
-/* Логотип – новый класс */
 .si_logo {
-  height: 50px; /* нормальный размер */
+  height: 50px; /* нормальный размер логотипа */
   width: auto;
 }
 
-/* Меню */
 .nav-links {
   list-style: none;
   display: flex;
@@ -47,10 +45,10 @@ body {
   color: #4375FE;
 }
 
-/* Заголовок секции проектов */
+/* Заголовок секции "Наши проекты" */
 #projects h2 {
   text-align: center;
-  margin-top: 150px; /* отступ от верхней панели */
+  margin-top: 150px; /* отступ от фиксированного верхнего меню */
   font-size: 28px;
 }
 
@@ -63,7 +61,7 @@ body {
   box-sizing: border-box;
 }
 
-/* Контейнер проектов – слайдер */
+/* Контейнер слайдера проектов */
 .projects-container {
   display: flex;
   gap: 20px;
@@ -73,13 +71,12 @@ body {
 
 /* Каждый фрейм проекта */
 .project {
-  background: linear-gradient(to bottom, #ffffff, #d8b4fe); /* фон фрейма */
+  background: linear-gradient(to bottom, #ffffff, #d8b4fe); /* градиентный фон */
   padding: 15px;
   border-radius: 15px;
   text-align: center;
-  /* Растягиваем так, чтобы на экране было ровно 3 проекта */
-  flex: 0 0 calc((100% - 40px) / 3);
-  box-shadow: 0 0 15px rgba(54, 70, 76, 0.15);
+  flex: 0 0 calc((100% - 40px) / 3); /* ровно 3 фрейма на экране */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* тень */
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -91,12 +88,11 @@ body {
   font-weight: bold;
 }
 
-/* При наведении */
 .project:hover {
   transform: scale(1.05);
 }
 
-/* Изображение проекта */
+/* Изображения проекта */
 .image-wrapper {
   border-radius: 15px;
   overflow: hidden;
@@ -120,7 +116,7 @@ body {
   margin: 0;
 }
 
-/* Панель с годом – овал и пастельный фиолетовый */
+/* Панель года – овал с пастельным фиолетовым цветом */
 .year {
   display: inline-block;
   background-color: #4375FE;
@@ -153,12 +149,12 @@ body {
   background-color: #3259DC;
 }
 
-/* Неактивные проекты – 50% прозрачности */
+/* Фреймы, не являющиеся активными, с прозрачностью 50% */
 .project:not(.active) {
   opacity: 0.5;
 }
 
-/* Стрелки – шрифт Roboto, изменённые символы */
+/* Стрелки пролистывания – шрифт Roboto, позиционирование поверх слайдера */
 .arrow-btn {
   font-family: 'Roboto', sans-serif;
   background-color: rgb(67, 117, 254);
@@ -170,9 +166,9 @@ body {
   cursor: pointer;
   transition: background 0.3s ease;
   position: absolute;
-  /* Изначально по центру по вертикали */
   top: 50%;
   transform: translateY(-50%);
+  z-index: 10;
   text-decoration: none;
 }
 
@@ -180,13 +176,26 @@ body {
   background-color: #3259DC;
 }
 
-/* Адаптивность: на мобильном — 1 фрейм на строке */
+/* Начальное положение стрелок (JS их переопределит) */
+#left-arrow {
+  left: 10px;
+}
+
+#right-arrow {
+  right: 10px;
+}
+
+/* Адаптив: на мобильном — один фрейм на строке, скрываем стрелки */
 @media (max-width: 768px) {
   .projects-container {
     flex-direction: column;
     gap: 15px;
+    transform: none !important;
   }
   .project {
     flex: 0 0 100%;
+  }
+  .arrow-btn {
+    display: none;
   }
 }
