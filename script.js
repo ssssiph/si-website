@@ -1,11 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const projectContainer = document.querySelector(".projects-container");
-    const leftArrow = document.querySelector("#left-arrow");
-    const rightArrow = document.querySelector("#right-arrow");
     const projects = document.querySelectorAll(".project");
-
     let currentIndex = 1;
-    const maxIndex = projects.length - 1;
 
     function updateProjects() {
         projects.forEach((project, index) => {
@@ -19,15 +14,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    leftArrow.addEventListener("click", () => {
+    document.querySelector("#left-arrow").addEventListener("click", () => {
         if (currentIndex > 0) {
             currentIndex--;
             updateProjects();
         }
     });
 
-    rightArrow.addEventListener("click", () => {
-        if (currentIndex < maxIndex) {
+    document.querySelector("#right-arrow").addEventListener("click", () => {
+        if (currentIndex < projects.length - 1) {
             currentIndex++;
             updateProjects();
         }
