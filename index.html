@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Верхняя панель -->
+  <!-- Верхнее меню -->
   <header class="navbar">
     <a href="https://si-website-production.up.railway.app/">
       <img src="logo.jpg" alt="Logo" class="si_logo" />
@@ -24,15 +24,14 @@
   <main>
     <section id="projects">
       <h2>Наши проекты</h2>
-      <!-- Обёртка для слайдера с проектами -->
       <div class="projects-wrapper">
+        <!-- Контейнер слайдера -->
         <div class="projects-container">
           <!-- Первый слот (пустой) -->
           <div class="project empty">
             <h3>Скоро...</h3>
           </div>
-          
-          <!-- Активный проект: Podcast (2023) – всегда по центру -->
+          <!-- Второй слот: Podcast (2023) – активный, всегда по центру -->
           <div class="project active">
             <a href="https://www.roblox.com/games/15477270728/Podcast">
               <div class="image-wrapper">
@@ -45,13 +44,12 @@
               <button class="play-btn">Играть</button>
             </a>
           </div>
-          
           <!-- Третий слот (пустой) -->
           <div class="project empty">
             <h3>Скоро...</h3>
           </div>
         </div>
-        <!-- Стрелки (расположены поверх слайдера) -->
+        <!-- Стрелки пролистывания, располагаются поверх слайдера -->
         <button id="left-arrow" class="arrow-btn">🠔</button>
         <button id="right-arrow" class="arrow-btn">🠖</button>
       </div>
