@@ -22,13 +22,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Убрано position: relative, чтобы меню оставалось фиксированным */
 }
 
 .si_logo {
   position: absolute;
   left: 20px;
-  top: 10px; /* центрирование логотипа внутри 70px */
+  top: 10px;
   height: 50px;
   width: auto;
 }
@@ -44,14 +43,14 @@ body {
 }
 .nav-links a {
   text-decoration: none;
-  color: grey; /* по умолчанию серый */
+  color: grey;
   font-size: 18px;
   font-weight: 600;
   position: relative;
   padding: 5px 0;
 }
 .nav-links a.active {
-  color: black; /* активный становится чёрным */
+  color: black;
 }
 .nav-links a::after {
   content: "";
@@ -60,7 +59,7 @@ body {
   bottom: -2px;
   width: 0;
   height: 2px;
-  background: #CCB4E4; /* пастельный фиолетовый */
+  background: #CCB4E4;
   transition: width 0.3s ease;
 }
 .nav-links a:hover::after,
@@ -107,7 +106,7 @@ body {
 
 /* Фреймы проектов */
 .project {
-  background: linear-gradient(to bottom, #ffffff, #d8b4fe);  /* градиентный фон */
+  background: linear-gradient(to bottom, #ffffff, #d8b4fe);
   padding: 15px;
   border-radius: 15px;
   text-align: center;
