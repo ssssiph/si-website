@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@400;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,41 +7,57 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Jura', sans-serif;
 }
 
 .navbar {
     position: fixed;
-    top: 0;
+    top: 10px; /* Опустил немного */
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 10px 0;
+    padding: 15px 0; /* Увеличил отступ */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
     position: absolute;
     left: 20px;
-    height: 50px;
+    height: 60px; /* Немного увеличил */
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 30px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: black;
-    font-size: 18px;
-    font-weight: bold;
+    color: gray; /* Серый цвет для невыбранных */
+    font-size: 20px;
+    font-weight: 600;
     padding: 10px;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px; /* Полоска под кнопкой */
+    width: 0;
+    height: 3px;
+    background-color: orange;
+    transition: width 0.3s ease-in-out;
 }
 
 .nav-links a:hover {
-    color: blue;
+    color: black; /* Черный текст при наведении */
+}
+
+.nav-links a:hover::after {
+    width: 100%; /* Анимация появления полоски слева направо */
 }
