@@ -234,21 +234,23 @@ body {
     display: none;
   }
 }
+
 /* Кастомный скроллбар */
 ::-webkit-scrollbar {
-  width: 8px;  /* ширина вертикального скроллбара */
-  height: 8px; /* высота горизонтального скроллбара, если нужно */
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: white;  /* цвет дорожки скроллбара */
+  background: #f1f1f1; /* светло-серый фон дорожки */
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.5);  /* цвет ползунка, можно настроить прозрачность */
+  background-color: #c1c1c1; /* серый цвет ползунка */
   border-radius: 10px;
+  border: 2px solid #f1f1f1; /* делаем эффект "отступа" от дорожки */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #a8a8a8;
 }
