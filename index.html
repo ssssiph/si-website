@@ -7,17 +7,50 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Меню -->
     <header class="navbar">
-        <img src="logo.jpg" alt="Logo" class="logo">
+        <a href="https://si-website-production.up.railway.app/">
+            <img src="logo.jpg" alt="Logo" class="logo">
+        </a>
         <nav>
-             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
             </ul>
         </nav>
     </header>
+
+    <!-- Основной контент -->
     <main>
+       <section id="projects">
+    <h2>Наши проекты</h2>
+    <div class="projects-container">
+
+        <!-- Podcast (2023) -->
+        <div class="project">
+            <a href="https://www.roblox.com/games/15477270728/Podcast">
+                <div class="image-wrapper">
+                    <img src="podcast-thumbnail.jpg" alt="Podcast">
+                </div>
+                <header>
+                    <h3>Podcast</h3>
+                    <p class="year">2023</p>
+                </header>
+                <button class="play-btn">Играть</button>
+            </a>
+        </div>
+
+        <!-- Пустые слоты для будущих игр -->
+        <div class="project empty"><h3>Скоро...</h3></div>
+        <div class="project empty"><h3>Скоро...</h3></div>
+        <div class="project empty"><h3>Скоро...</h3></div>
+        <div class="project empty"><h3>Скоро...</h3></div>
+
+    </div>
+</section>
     </main>
+
     <script src="script.js"></script>
 </body>
 </html>
