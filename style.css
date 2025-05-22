@@ -1,87 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@400;600&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap');
 
 body {
     font-family: 'Jura', sans-serif;
-    padding-top: 80px; /* Опускаем контент ниже меню */
-}
-
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-bottom: 2px solid lightgray;
-}
-
-.logo {
-    position: absolute;
-    left: 20px;
-    height: 60px;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: gray; /* Серый цвет для невыбранных кнопок */
-    font-size: 20px;
-    font-weight: 600;
-    padding: 10px;
-    position: relative;
-}
-
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0;
-    height: 3px;
-    background-color: orange;
-    transition: width 0.3s ease-in-out;
-}
-
-/* При наведении */
-.nav-links a:hover {
-    color: black;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-/* Только активная кнопка должна быть черной */
-.nav-links a.active {
-    color: black;
-}
-
-.nav-links a.active::after {
-    width: 100%;
 }
 
 .projects-container {
     display: flex;
     gap: 20px;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
+    justify-content: center;
     padding: 20px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
+    overflow: hidden;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .project {
@@ -91,8 +23,7 @@ body {
     text-align: center;
     width: 280px;
     box-shadow: 0 0 15px rgba(54, 70, 76, 0.15);
-    transition: transform 0.3s ease-in-out;
-    flex-shrink: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .project:hover {
@@ -122,22 +53,22 @@ body {
 
 .year {
     display: inline-block;
-    background-color: #d8b4fe; /* Пастельный фиолетовый */
+    background-color: #4375FE; /* Пастельный фиолетовый */
     color: white;
     font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 20px; /* Закругление в овал */
+    padding: 10px 20px;
+    border-radius: 20px; /* Овальная форма */
     margin-top: 5px;
 }
 
 .play-btn {
     display: block;
     width: 100%;
-    background-color: #d8b4fe; /* Пастельный фиолетовый */
+    background-color: #4375FE; /* Новый цвет */
     color: white;
     border: none;
     padding: 12px;
-    border-radius: 20px; /* Овал */
+    border-radius: 25px; /* Овал */
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
@@ -147,16 +78,18 @@ body {
 }
 
 .play-btn:hover {
-    background-color: #c084fc;
+    background-color: #3259DC;
 }
 
-.empty {
+/* Прозрачность неактивных проектов */
+.project:not(.active) {
     opacity: 0.5;
 }
 
+/* Центрируем заголовок */
 #projects h2 {
     text-align: center;
-    margin-top: 100px; /* Опускаем заголовок ниже */
+    margin-top: 300px; /* Сильно опустил заголовок */
 }
 
 /* Стрелки навигации */
@@ -168,7 +101,8 @@ body {
 }
 
 .arrow-btn {
-    background-color: #d8b4fe;
+    font-family: 'Roboto', sans-serif;
+    background-color: #4375FE;
     color: white;
     border: none;
     padding: 12px;
@@ -179,5 +113,17 @@ body {
 }
 
 .arrow-btn:hover {
-    background-color: #c084fc;
+    background-color: #3259DC;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        width: 80%;
+    }
 }
