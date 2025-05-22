@@ -77,9 +77,11 @@ body {
 .projects-container {
     display: flex;
     gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     padding: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
 }
 
 .project {
@@ -90,6 +92,7 @@ body {
     width: 280px;
     box-shadow: 0 0 15px rgba(54, 70, 76, 0.15);
     transition: transform 0.3s ease-in-out;
+    flex-shrink: 0;
 }
 
 .project:hover {
@@ -119,11 +122,11 @@ body {
 
 .year {
     display: inline-block;
-    background-color: orange;
+    background-color: #d8b4fe; /* Пастельный фиолетовый */
     color: white;
     font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 8px 16px;
+    border-radius: 20px; /* Закругление в овал */
     margin-top: 5px;
 }
 
@@ -134,14 +137,47 @@ body {
     color: white;
     border: none;
     padding: 12px;
-    border-radius: 8px;
+    border-radius: 20px; /* Овал */
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
     transition: background 0.3s ease-in-out;
     margin-top: 15px;
+    text-decoration: none; /* Убираем подчеркивание */
 }
 
 .play-btn:hover {
+    background-color: #c084fc;
+}
+
+.empty {
+    opacity: 0.5;
+}
+
+#projects h2 {
+    text-align: center;
+    margin-top: 100px; /* Опускаем заголовок ниже */
+}
+
+/* Стрелки навигации */
+.nav-arrows {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.arrow-btn {
+    background-color: #d8b4fe;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.arrow-btn:hover {
     background-color: #c084fc;
 }
