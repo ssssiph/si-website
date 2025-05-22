@@ -22,7 +22,6 @@ body {
   justify-content: center;
 }
 
-/* Логотип с фиксированным размером и размещён слева */
 .si_logo {
   position: absolute;
   left: 20px;
@@ -30,25 +29,38 @@ body {
   width: auto;
 }
 
-/* Навигация в верхнем меню */
+/* Навигация верхнего меню */
 .nav-links {
+  list-style: none;
   display: flex;
   gap: 20px;
+  margin: 0;
+  padding: 0;
 }
+
 .nav-links a {
-  text-decoration: none;
-  color: black;
+  position: relative;
+  padding: 5px 10px;
   font-size: 18px;
   font-weight: 600;
-  padding: 5px 10px;
-  border: 2px solid #4375FE; /* пастельный фиолетовый */
-  border-radius: 5px;
-  transition: background 0.3s ease, color 0.3s ease;
+  color: black;
+  text-decoration: none;
 }
-.nav-links a:hover,
-.nav-links a.active {
-  background-color: #4375FE;
-  color: white;
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #CCB4E4; /* пастельный фиолетовый */
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
 }
 
 /* Заголовок секции проектов */
@@ -75,7 +87,7 @@ body {
   transition: transform 0.5s ease-in-out;
 }
 
-/* Каждый фрейм проекта */
+/* Фреймы проектов */
 .project {
   background: linear-gradient(to bottom, #ffffff, #d8b4fe);  /* градиентный фон */
   padding: 15px;
@@ -107,7 +119,7 @@ body {
   display: block;
 }
 
-/* Заголовок проекта */
+/* Заголовок и ссылка проекта */
 .project header {
   margin-top: 10px;
 }
@@ -116,12 +128,16 @@ body {
   font-weight: bold;
   color: black;
   margin: 0;
+  text-decoration: none; /* убираем подчёркивание */
+}
+.project a {
+  text-decoration: none; /* убираем подчёркивание для всей ссылки */
 }
 
 /* Панель с годом – овал */
 .year {
   display: inline-block;
-  background-color: #4375FE;
+  background-color: #CCB4E4;
   color: white;
   font-weight: bold;
   padding: 10px 20px;
@@ -129,12 +145,12 @@ body {
   margin-top: 5px;
 }
 
-/* Кнопка "Играть" – с шрифтом Jura, нужным цветом и овалом */
+/* Кнопка "Играть" – шрифт Jura, пастельный фиолетовый */
 .play-btn {
   font-family: 'Jura', sans-serif;
   display: block;
   width: 100%;
-  background-color: rgb(67,117,254);
+  background-color: #CCB4E4;
   color: white;
   border: none;
   padding: 12px;
@@ -147,7 +163,7 @@ body {
   text-decoration: none;
 }
 .play-btn:hover {
-  background-color: #3259DC;
+  background-color: #B99DD3;
 }
 
 /* Фреймы, не являющиеся активными – прозрачность 50% */
@@ -173,13 +189,13 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  text-decoration: none;
   z-index: 10;
+  text-decoration: none;
 }
 .arrow-btn:hover {
   background-color: #3259DC;
 }
-/* Фиксированное положение стрелок в обёртке */
+/* Фиксированное положение стрелок */
 #left-arrow {
   left: 10px;
 }
@@ -187,7 +203,18 @@ body {
   right: 10px;
 }
 
-/* Адаптив для мобильных устройств: один фрейм на строке, стрелки скрыты */
+/* Дополнительный текстовый блок */
+#text-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+#text-section .text-content p {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Адаптив для мобильных устройств */
 @media (max-width: 768px) {
   .projects-container {
     flex-direction: column;
