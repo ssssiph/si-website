@@ -14,21 +14,21 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 70px; /* увеличенная высота */
+  height: 70px; /* увеличенная высота под размер логотипа */
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 0 20px;
   z-index: 1000;
   display: flex;
   align-items: center;
-  /* Центрирование навигации, а сам логотип позиционируется абсолютно */
   justify-content: center;
-  position: relative;
+  /* Убрано position: relative, чтобы меню оставалось фиксированным */
 }
+
 .si_logo {
   position: absolute;
   left: 20px;
-  top: 10px; /* логотип центрируется внутри 70px */
+  top: 10px; /* центрирование логотипа внутри 70px */
   height: 50px;
   width: auto;
 }
@@ -51,7 +51,7 @@ body {
   padding: 5px 0;
 }
 .nav-links a.active {
-  color: black; /* активный становится черным */
+  color: black; /* активный становится чёрным */
 }
 .nav-links a::after {
   content: "";
@@ -111,7 +111,7 @@ body {
   padding: 15px;
   border-radius: 15px;
   text-align: center;
-  flex: 0 0 calc((100% - 40px) / 3);  /* ровно 3 фрейма */
+  flex: 0 0 calc((100% - 40px) / 3);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
